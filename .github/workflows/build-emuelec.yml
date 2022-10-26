@@ -33,4 +33,4 @@ jobs:
       - name: Compile Armbian
         id: compile
         run: |
-          PROJECT=Amlogic-ce DEVICE=Amlogic-ng ARCH=aarch64 DISTRO=EmuELEC make image
+          PROJECT=Amlogic-ce DEVICE=Amlogic-ng ARCH=aarch64 DISTRO=EmuELEC SCRIPTS=./scripts make image

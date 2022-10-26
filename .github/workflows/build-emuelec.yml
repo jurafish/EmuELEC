@@ -26,7 +26,7 @@ jobs:
       - name: Download source code
         id: down
         run: |
-          git clone https://github.com/EmuELEC/EmuELEC.git
+          git clone https://github.com/jurafish/EmuELEC.git
           cd EmuELEC
           git checkout dev
           

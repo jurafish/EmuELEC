@@ -30,6 +30,9 @@ jobs:
           cd EmuELEC
           git checkout dev
           
+      - name: Setup Debug Session
+        uses: csexton/debugger-action@master
+          
       - name: Compile Armbian
         id: compile
         run: |

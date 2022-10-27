@@ -20,9 +20,14 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USER_NAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+
       - name: Image Name
         id: imagename
         run: echo "name=giantsoft2dock/emuelec-base" >>$GITHUB_OUTPUT
+          
+      - name: Setup Debug Session
+        uses: csexton/debugger-action@master
+        
       - name: Build base image
         run: docker build --pull --build-arg BUILDKIT_INLINE_CACHE=1 --cache-from ${{ steps.imagename.outputs.name }} --tag ${{ steps.imagename.outputs.name }}:latest images/base
       - name: Push base image

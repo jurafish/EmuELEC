@@ -27,8 +27,8 @@ jobs:
       - name: Push base image
         run: docker push ${{ steps.imagename.outputs.name }}:latest
 
-  build:
-    runs-on: ubuntu-22.04  
+#  build:
+#    runs-on: ubuntu-22.04  
 
 #    steps:
 #      - name: Checkout

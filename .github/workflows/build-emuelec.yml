@@ -30,29 +30,21 @@ jobs:
   build:
     runs-on: ubuntu-22.04  
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v3
         
-      - name: Initialization environment
-        id: init
-        env:
-          DEBIAN_FRONTEND: noninteractive
-        run: |
-          sudo -E apt install gcc make git unzip wget xz-utils libsdl2-dev libsdl2-mixer-dev libfreeimage-dev libfreetype6-dev libcurl4-openssl-dev rapidjson-dev libasound2-dev libgl1-mesa-dev build-essential libboost-all-dev cmake fonts-droid-fallback libvlc-dev libvlccore-dev vlc-bin texinfo premake4 golang libssl-dev curl patchelf xmlstarlet default-jre xsltproc
-          sudo -E apt install tzdata xfonts-utils lzop
-
-      - name: Download source code
-        id: down
-        run: |
-          git clone https://github.com/jurafish/EmuELEC.git
-          cd EmuELEC
-          git checkout dev
+#      - name: Download source code
+#        id: down
+#        run: |
+#          git clone https://github.com/jurafish/EmuELEC.git
+#          cd EmuELEC
+#          git checkout dev
+#          
+#     - name: Setup Debug Session
+#        uses: csexton/debugger-action@master
           
-      - name: Setup Debug Session
-        uses: csexton/debugger-action@master
-          
-      - name: Compile Armbian
-        id: compile
-        run: |
-          PROJECT=Amlogic-ce DEVICE=Amlogic-ng ARCH=aarch64 DISTRO=EmuELEC SCRIPTS=./scripts make image
+#      - name: Compile Armbian
+#        id: compile
+#        run: |
+#          PROJECT=Amlogic-ce DEVICE=Amlogic-ng ARCH=aarch64 DISTRO=EmuELEC SCRIPTS=./scripts make image
